@@ -27,6 +27,8 @@ function preload(){
   hoverinstrucoes = loadImage("menu/img/hoverinstrucoes.png")
   hovercreditos = loadImage("menu/img/hovercreditos.png")
 
+  //Iniciar
+
   //instruções
   bginstrucoes = loadImage("instrucoes/img/bginstrucoes.png")
 
@@ -46,7 +48,6 @@ function menu(){
 
   
   //Botões
-  noStroke();
   image(imginiciar, 270, 230)
   image(imginstrucoes, 270, 300)
   image(imgcreditos, 270, 370)
@@ -54,6 +55,7 @@ function menu(){
 
 
   // ============== Hover mouse ==============
+  //hover iniciar
   if (mouseX > 270 && mouseX < 500 && mouseY > 230 && mouseY < 295){
     image(hoveriniciar, 270, 230)
 
@@ -62,7 +64,7 @@ function menu(){
       tela = 1
     }
 
-
+  // Hover instrucões
   }else if(mouseX > 270 && mouseX < 500 && mouseY > 280 && mouseY < 360){
     image(hoverinstrucoes, 270, 300)
 
@@ -71,6 +73,7 @@ function menu(){
       tela = 2
     }
 
+    //hover creditos
   }else if(mouseX > 270 && mouseX < 500 && mouseY > 370 && mouseY < 430){
     image(hovercreditos, 270, 370)
 
@@ -83,6 +86,15 @@ function menu(){
 
 //========= Iniciar =======
 function iniciar(){
+  background(999)
+  textSize(30)
+  text('CONTINUE A SEQUÊNCIA', 300, 200)
+  textSize(25)
+  text('S T Q Q S * D', 400, 280)
+  text('a) s', 300, 380)
+  text('b) t', 380, 380)
+  text('c) j', 460, 380)
+  text('d) k', 540, 380)
 
 }
 
