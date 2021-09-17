@@ -15,7 +15,7 @@
 // tela = 5 -> vitoria!
 
 //===== Variáveis ======
-let tela = 1.7;
+let tela = 0;
 let cont = 1;
 
 let contador = 0;
