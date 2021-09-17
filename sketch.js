@@ -8,14 +8,29 @@
 // tela = 1.5 -> Fase 5
 // tela = 1.6 -> Fase 6
 // tela = 1.7 -> Fase 7
+// tela = 1.8 -> Fase 8
 // tela = 2 -> instruções
 // tela = 3 -> creditos
 // tela = 4 -> você errou!
 // tela = 5 -> vitoria!
 
 //===== Variáveis ======
-let tela = 0;
+let tela = 1.7;
 let cont = 1;
+
+let contador = 0;
+let tempo = 0;
+let andargarota = 120;
+let andarmario = 5;
+let andardino = 100;
+let andarninja = 40;
+let andargaroto = 20;
+
+let garota = [];
+let mario = [];
+let dino = [];
+let ninja = [];
+let garoto = [];
 
 // Proporções
 function setup() {
@@ -127,6 +142,84 @@ function preload() {
   alternativa2_7hover = loadImage("iniciar/fase7/BHover.png");
   alternativa3_7hover = loadImage("iniciar/fase7/CHover.png");
   alternativa4_7hover = loadImage("iniciar/fase7/DHover.png");
+
+  // fase 8
+  numero8 = loadImage("iniciar/fase8/fase8.png");
+
+  alternativa1_8 = loadImage("iniciar/fase8/A.png");
+  alternativa2_8 = loadImage("iniciar/fase8/B.png");
+  alternativa3_8 = loadImage("iniciar/fase8/C.png");
+  alternativa4_8 = loadImage("iniciar/fase8/D.png");
+
+  alternativa1_8hover = loadImage("iniciar/fase8/AHover.png");
+  alternativa2_8hover = loadImage("iniciar/fase8/BHover.png");
+  alternativa3_8hover = loadImage("iniciar/fase8/CHover.png");
+  alternativa4_8hover = loadImage("iniciar/fase8/DHover.png");
+
+  garota[0] = loadImage("iniciar/fase8/cutegirlfiles/png/run1.png");
+  garota[1] = loadImage("iniciar/fase8/cutegirlfiles/png/run2.png");
+  garota[2] = loadImage("iniciar/fase8/cutegirlfiles/png/run3.png");
+  garota[3] = loadImage("iniciar/fase8/cutegirlfiles/png/run4.png");
+  garota[4] = loadImage("iniciar/fase8/cutegirlfiles/png/run5.png");
+  garota[5] = loadImage("iniciar/fase8/cutegirlfiles/png/run6.png");
+  garota[6] = loadImage("iniciar/fase8/cutegirlfiles/png/run7.png");
+  garota[7] = loadImage("iniciar/fase8/cutegirlfiles/png/run8.png");
+  garota[8] = loadImage("iniciar/fase8/cutegirlfiles/png/run9.png");
+  garota[9] = loadImage("iniciar/fase8/cutegirlfiles/png/run10.png");
+  garota[10] = loadImage("iniciar/fase8/cutegirlfiles/png/run11.png");
+  garota[11] = loadImage("iniciar/fase8/cutegirlfiles/png/run12.png");
+  garota[12] = loadImage("iniciar/fase8/cutegirlfiles/png/run13.png");
+  garota[13] = loadImage("iniciar/fase8/cutegirlfiles/png/run14.png");
+  garota[14] = loadImage("iniciar/fase8/cutegirlfiles/png/run15.png");
+  garota[15] = loadImage("iniciar/fase8/cutegirlfiles/png/run16.png");
+  garota[16] = loadImage("iniciar/fase8/cutegirlfiles/png/run17.png");
+  garota[17] = loadImage("iniciar/fase8/cutegirlfiles/png/run18.png");
+  garota[18] = loadImage("iniciar/fase8/cutegirlfiles/png/run19.png");
+  garota[19] = loadImage("iniciar/fase8/cutegirlfiles/png/run20.png");
+
+  mario[0] = loadImage("iniciar/fase8/mario/png/run_1.png");
+  mario[1] = loadImage("iniciar/fase8/mario/png/run_2.png");
+  mario[2] = loadImage("iniciar/fase8/mario/png/run_3.png");
+  mario[3] = loadImage("iniciar/fase8/mario/png/run_4.png");
+  mario[4] = loadImage("iniciar/fase8/mario/png/run_5.png");
+  mario[5] = loadImage("iniciar/fase8/mario/png/run_6.png");
+  mario[6] = loadImage("iniciar/fase8/mario/png/run_7.png");
+  mario[7] = loadImage("iniciar/fase8/mario/png/run_8.png");
+
+  dino[0] = loadImage("iniciar/fase8/dino/png/run_1.png");
+  dino[1] = loadImage("iniciar/fase8/dino/png/run_2.png");
+  dino[2] = loadImage("iniciar/fase8/dino/png/run_3.png");
+  dino[3] = loadImage("iniciar/fase8/dino/png/run_4.png");
+  dino[4] = loadImage("iniciar/fase8/dino/png/run_5.png");
+  dino[5] = loadImage("iniciar/fase8/dino/png/run_6.png");
+  dino[6] = loadImage("iniciar/fase8/dino/png/run_7.png");
+  dino[7] = loadImage("iniciar/fase8/dino/png/run_8.png");
+
+  ninja[0] = loadImage("iniciar/fase8/ninja/png/run_1.png");
+  ninja[1] = loadImage("iniciar/fase8/ninja/png/run_2.png");
+  ninja[2] = loadImage("iniciar/fase8/ninja/png/run_3.png");
+  ninja[3] = loadImage("iniciar/fase8/ninja/png/run_4.png");
+  ninja[4] = loadImage("iniciar/fase8/ninja/png/run_5.png");
+  ninja[5] = loadImage("iniciar/fase8/ninja/png/run_6.png");
+  ninja[6] = loadImage("iniciar/fase8/ninja/png/run_7.png");
+  ninja[7] = loadImage("iniciar/fase8/ninja/png/run_8.png");
+  ninja[8] = loadImage("iniciar/fase8/ninja/png/run_9.png");
+
+  garoto[0] = loadImage("iniciar/fase8/flatboy/png/run1.png");
+  garoto[1] = loadImage("iniciar/fase8/flatboy/png/run2.png");
+  garoto[2] = loadImage("iniciar/fase8/flatboy/png/run3.png");
+  garoto[3] = loadImage("iniciar/fase8/flatboy/png/run4.png");
+  garoto[4] = loadImage("iniciar/fase8/flatboy/png/run5.png");
+  garoto[5] = loadImage("iniciar/fase8/flatboy/png/run6.png");
+  garoto[6] = loadImage("iniciar/fase8/flatboy/png/run7.png");
+  garoto[7] = loadImage("iniciar/fase8/flatboy/png/run8.png");
+  garoto[8] = loadImage("iniciar/fase8/flatboy/png/run9.png");
+  garoto[9] = loadImage("iniciar/fase8/flatboy/png/run10.png");
+  garoto[10] = loadImage("iniciar/fase8/flatboy/png/run11.png");
+  garoto[11] = loadImage("iniciar/fase8/flatboy/png/run12.png");
+  garoto[12] = loadImage("iniciar/fase8/flatboy/png/run13.png");
+  garoto[13] = loadImage("iniciar/fase8/flatboy/png/run14.png");
+  garoto[14] = loadImage("iniciar/fase8/flatboy/png/run15.png");
 
   //instruções
   bginstrucoes = loadImage("instrucoes/img/bginstrucoes.png");
@@ -432,6 +525,84 @@ function fase7() {
   }
 }
 
+// === FASE 8 ===
+function fase8() {
+  background("#E2D4BE");
+  image(numero8, 10, 8);
+
+  textFont(fontPress);
+  textSize(12);
+  text("Hugo Corrêa © 2021", 300, 600);
+
+  tempo = tempo + 1;
+  andargarota = andargarota + 7;
+  image(garota[contador % 19], andargarota, 10);
+  if (tempo > 1) {
+    contador = contador + 1;
+    tempo = 0;
+  }
+
+  andarmario = andarmario + 10;
+  image(mario[contador % 7], andarmario, 60);
+  if (tempo > 1) {
+    contador = contador + 1;
+    tempo = 0;
+  }
+
+  andardino = andardino + 10;
+  image(dino[contador % 7], andardino, 150);
+  if (tempo > 1) {
+    contador = contador + 1;
+    tempo = 0;
+  }
+
+  andarninja = andarninja + 10;
+  image(ninja[contador % 8], andarninja, 260);
+  if (tempo > 1) {
+    contador = contador + 1;
+    tempo = 0;
+  }
+
+  andargaroto = andargaroto + 10;
+  image(garoto[contador % 14], andargaroto, 390);
+  if (tempo > 1) {
+    contador = contador + 1;
+    tempo = 0;
+  }
+
+  if (andargarota > 800) {
+    tela = 1.82;
+  }
+}
+
+function fase82() {
+  background(999);
+  image(numero5, 10, 8);
+
+  textFont(fontPress);
+  textSize(36);
+  text("Quantos botões tem", 100, 105);
+  text("na roupa da", 220, 165);
+  text("garota ?", 290, 220);
+  textSize(12);
+  text("Hugo Corrêa © 2021", 300, 600);
+
+  image(alternativa1_8, 150, 300);
+  image(alternativa2_8, 150, 450);
+  image(alternativa3_8, 450, 300);
+  image(alternativa4_8, 450, 450);
+
+  if (mouseX > 150 && mouseX < 400 && mouseY > 300 && mouseY < 360) {
+    image(alternativa1_8hover, 150, 300);
+  } else if (mouseX > 150 && mouseX < 400 && mouseY > 450 && mouseY < 510) {
+    image(alternativa2_8hover, 150, 450);
+  } else if (mouseX > 450 && mouseX < 680 && mouseY > 300 && mouseY < 360) {
+    image(alternativa3_8hover, 450, 300);
+  } else if (mouseX > 450 && mouseX < 680 && mouseY > 450 && mouseY < 510) {
+    image(alternativa4_8hover, 450, 450);
+  }
+}
+
 // ======== FUNÇÃO CLICK ==========
 function mouseClicked() {
   // ======= Menu
@@ -453,8 +624,12 @@ function mouseClicked() {
   if (tela == 4) {
     if (mouseX > 200 && mouseX < 440 && mouseY > 500 && mouseY < 565) {
       tela = 0;
+      andargarota = 120;
+      andarmario = 5;
+      andardino = 100;
+      andarninja = 40;
+      andargaroto = 20;
       cont = cont + 1;
-      console.log(cont);
     }
   }
   // Tela de vitória
@@ -531,6 +706,7 @@ function mouseClicked() {
       tela = 4;
     } else if (mouseX > 450 && mouseX < 680 && mouseY > 300 && mouseY < 360) {
       tela = 4;
+      //Resposta certa
     } else if (mouseX > 170 && mouseX < 325 && mouseY > 60 && mouseY < 110) {
       tela = 1.6;
     }
@@ -544,6 +720,7 @@ function mouseClicked() {
       tela = 4;
     } else if (mouseX > 300 && mouseX < 532 && mouseY > 400 && mouseY < 465) {
       tela = 4;
+      //Resposta certa
     } else if (mouseX > 10 && mouseX < 80 && mouseY > 5 && mouseY < 75) {
       tela = 1.7;
     }
@@ -557,8 +734,23 @@ function mouseClicked() {
       tela = 4;
     } else if (mouseX > 450 && mouseX < 680 && mouseY > 300 && mouseY < 360) {
       tela = 4;
+      //Resposta certa
     } else if (mouseX > 450 && mouseX < 680 && mouseY > 450 && mouseY < 510) {
+      tela = 1.8;
+    }
+  }
+
+  // == Fase8
+  if (tela == 1.82) {
+    //Resposta certa
+    if (mouseX > 150 && mouseX < 400 && mouseY > 300 && mouseY < 360) {
       tela = 5;
+    } else if (mouseX > 150 && mouseX < 400 && mouseY > 450 && mouseY < 510) {
+      tela = 4;
+    } else if (mouseX > 450 && mouseX < 680 && mouseY > 300 && mouseY < 360) {
+      tela = 4;
+    } else if (mouseX > 450 && mouseX < 680 && mouseY > 450 && mouseY < 510) {
+      tela = 4;
     }
   }
 }
@@ -581,6 +773,10 @@ function draw() {
     fase6();
   } else if (tela == 1.7) {
     fase7();
+  } else if (tela == 1.8) {
+    fase8();
+  } else if (tela == 1.82) {
+    fase82();
   } else if (tela == 2) {
     instrucao();
   } else if (tela == 3) {
