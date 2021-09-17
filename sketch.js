@@ -329,7 +329,7 @@ function fase4() {
 
   textFont(fontPress);
   textSize(36);
-  text("Qual a cor do balão ?", 50, 150);
+  text("Qual a cor do botão ?", 50, 150);
   textSize(12);
   text("Hugo Corrêa © 2021", 300, 600);
 
