@@ -156,6 +156,7 @@ function preload() {
   alternativa3_8hover = loadImage("iniciar/fase8/CHover.png");
   alternativa4_8hover = loadImage("iniciar/fase8/DHover.png");
 
+
   garota[0] = loadImage("iniciar/fase8/cutegirlfiles/png/run1.png");
   garota[1] = loadImage("iniciar/fase8/cutegirlfiles/png/run2.png");
   garota[2] = loadImage("iniciar/fase8/cutegirlfiles/png/run3.png");
@@ -536,6 +537,7 @@ function fase8() {
 
   tempo = tempo + 1;
   andargarota = andargarota + 7;
+
   image(garota[contador % 19], andargarota, 10);
   if (tempo > 1) {
     contador = contador + 1;
@@ -624,11 +626,13 @@ function mouseClicked() {
   if (tela == 4) {
     if (mouseX > 200 && mouseX < 440 && mouseY > 500 && mouseY < 565) {
       tela = 0;
+
       andargarota = 120;
       andarmario = 5;
       andardino = 100;
       andarninja = 40;
       andargaroto = 20;
+
       cont = cont + 1;
     }
   }
@@ -636,6 +640,13 @@ function mouseClicked() {
   if (tela == 5) {
     if (mouseX > 500 && mouseX < 740 && mouseY > 530 && mouseY < 595) {
       tela = 0;
+
+      andargarota = 120;
+      andarmario = 5;
+      andardino = 100;
+      andarninja = 40;
+      andargaroto = 20;
+      
       cont = 1;
     }
   }
